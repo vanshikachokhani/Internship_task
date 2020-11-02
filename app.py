@@ -106,19 +106,12 @@ def addrec1():
                 
                 cur.execute("SELECT team_a,score_a,wicket_a,four_a, six_a, team_b, score_b, wicket_b, four_b, six_b, winner,man_of_match FROM matches WHERE team_a=? AND team_b=? ",(name1,name2))
                 rows = cur.fetchall()
-
-            with sql.connect("database.db") as conn1:    
-                conn1.row_factory=sql.Row
-                cur = conn1.cursor()
-                cur.execute("SELECT * from teams WHERE team_name=?",(name1))
+                
+                cur.execute("SELECT team_name,coach_name,captian_name,no_match from teams WHERE team_name=?",(name1,))
                 rows1=cur.fetchall()
-
-            with sql.connect("database.db") as conn2:    
-                conn2.row_factory=sql.Row
-                cur = conn2.cursor()
-                cur.execute("SELECT * from teams WHERE team_name=?",(name2))
+                
+                cur.execute("SELECT team_name,coach_name,captian_name,no_match from teams WHERE team_name= ?",(name2,))
                 rows2=cur.fetchall()
-
                 msg = "Record displayed successfully"
 
         except:
@@ -126,8 +119,7 @@ def addrec1():
             msg="error in display operation"
 
         finally:
-            return render_template("result1.html",**locals())
-            #Close the connection
+            return render_template("result1.html",rows=rows,rows1=rows1,rows2=rows2,name1=name1,name2=name2)
             conn.close()
 
 #API to direct to home page
