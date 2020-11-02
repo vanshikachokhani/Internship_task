@@ -1,0 +1,29 @@
+<!--Table to dispaly details of all matches-->
+<!Doctype html>
+<html Lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Matches</title>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <td>TEAM A</td>
+                <td>TEAM B</td>
+                <td>WINNER</td>
+                <td>DATE OF MATCH</td>
+            </thead>
+
+           {% for row in rows %}
+            <tr>
+                <td>{{row['team_a']}}</td>
+                <td>{{row['team_b']}}</td>
+                <td>{{row['winner']}}</td>
+                <td>{{row['match_date']}}</td>
+            </tr>
+            {% endfor %}
+        </table><br><br>
+        <a href="/">Go to home</a>
+    </body>
+</html>

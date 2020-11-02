@@ -1,0 +1,89 @@
+<!--Tables to display all details of a specific match-->
+
+<!Doctype html>
+<html Lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Matches</title>
+    </head>
+    <body>
+        
+        <h3>Winner Of The Match</h3>
+        {% for row in rows %}
+        <p>{{row['winner']}}</p>
+        {% endfor %}
+        <h3>Man Of The Match</h3>
+        {% for row in rows %}
+        <p>{{row['man_of_match']}}</p>
+        {% endfor %}
+        <h3>Details of team {{name1}}</h3>
+        <table border="1">
+            <thead>
+                <td>SCORE </td>
+                <td>WICKETS LOST </td>
+                <td>No. Of 6s</td>
+                <td>No. of 4s</td>
+
+            </thead>
+
+           {% for row in rows %}
+            <tr>
+                <td>{{row['score_a']}}</td>
+                <td>{{row['wicket_a']}}</td>
+                <td>{{row['four_a']}}</td>
+                <td>{{row['six_a']}}</td>
+            </tr>
+            {% endfor %}
+        </table><br>
+        <table border="1">
+            <thead>
+                <td>COACH </td>
+                <td>CAPTAIN</td>
+                <td>No. of matches played till date</td>
+            </thead>
+            {% for row1 in rows1 %}
+            <tr>
+                <td>{{row1['coach_name']}}</td>
+                <td>{{row1['captian_name']}}</td>
+                <td>{{row1['no_match']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+        <h3>Details of team {{name2}}</h3>
+        <table border="1">
+            <thead>
+                <td>SCORE </td>
+                <td>WICKETS LOST </td>
+                <td>No. Of 6s</td>
+                <td>No. of 4s</td>
+            </thead>
+            {% for row in rows %}
+            <tr>
+                <td>{{row['score_b']}}</td>
+                <td>{{row['wicket_b']}}</td>
+                <td>{{row['four_b']}}</td>
+                <td>{{row['six_b']}}</td>
+            </tr>
+            {% endfor %}
+        </table><br>
+        <table border="1">
+            <thead>
+                <td>COACH </td>
+                <td>CAPTAIN</td>
+                <td>No. of matches played till date</td>
+            </thead>
+            {% for row2 in rows2 %}
+            <tr>
+                <td>{{row2['coach_name']}}</td>
+                <td>{{row2['captian_name']}}</td>
+                <td>{{row2['no_match']}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        <br><br>
+        <a href="/">Go to home</a>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!--Form to take input of match details-->
+<!Doctype html>
+<html Lang="en">
+    <body>
+        <form action="{{url_for('addrec')}}" method="POST">
+            <h3>Match Information</h3>
+            Team A<br>
+            <input type="text" name="namea"><br>
+            Team B<br>
+            <input type="text" name="nameb"><br>
+            Score Of A<br>
+            <input type="integer" name="scorea"><br>
+            Wickets Lost By A<br>
+            <input type="integer" name="wicketa"><br>
+            No. Of 4's By A<br>
+            <input type="integer" name="foura"><br>
+            No Of 6's By A<br>
+            <input type="integer" name="sixa"><br>
+            Score Of B<br>
+            <input type="integer" name="scoreb"><br>
+            Wickets lost By B<br>
+            <input type="integer" name="wicketb"><br>
+            No. Of 4's By B<br>
+            <input type="integer" name="fourb"><br>
+            No Of 6's By B<br>
+            <input type="integer" name="sixb"><br>
+            Winner(Won By?)<br>
+            <input type="text" name="winner"><br>
+            Man Of The Match<br>
+            <input text="text" name="manofmatch"><br>
+            Date Of Match<br>
+            <input type="date" name="dateofmatch"><br><br>
+            <input type="submit" value="submit"><br>
+        </form>
+    </body>
+</html>

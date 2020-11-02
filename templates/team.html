@@ -1,0 +1,19 @@
+<!--Form to take input of team details-->
+
+<!Doctype html>
+<html Lang="en">
+    <body>
+        <form action="{{url_for('addrec2')}}" method="POST">
+            <h3>Team Information</h3>
+            Team Name<br>
+            <input type="text" name="name"><br>
+            Coach Name<br>
+            <input type="text" name="coname"><br>
+            Captain Name<br>
+            <input type="text" name="caname"><br>
+            No of matches till date<br>
+            <input type="integer" name="num"><br><br>
+            <input type="submit" value="submit"><br>
+        </form>
+    </body>
+</html>
