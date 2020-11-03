@@ -8,6 +8,8 @@
   - Flask - v1.1.2
   - SQLite
 
+## Run the app.py file to start the local server 
+
 ## API endpoints
 ### 1.Add team to the database : 
 >Endpoint : http://127.0.0.1:5000/team
